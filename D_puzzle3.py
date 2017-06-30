@@ -1,6 +1,6 @@
 # D_puzzle3.py
 
-""" Ground truth: pressure, temperature, and magnetic field together cause the color.
+""" Ground truth: humidity, temperature, and magnetic field together cause the color.
 """
 
 from __future__ import print_function
@@ -20,10 +20,11 @@ while True:
     m_field = raw['x']**2 + raw['y']**2 + raw['z']**2
 
     t = int(min([max([(temperature - 18.) * 255. / 19., 0]), 255]))
-    p = int(min([max([(pressure - 500.) * 255. / 2000., 0]), 255]))
+#    p = int(min([max([(pressure - 500.) * 255. / 2000., 0]), 255]))
+    h = int(min([max([humidity, 0]), 255]))
     m = int(min([max([(m_field - 50.) / 1000., 0]), 255]))
 
-    color = [t,m,p]
+    color = [t,m,h]
     
     t_out = str(temperature) + 15*" "
     h_out = str(humidity) + 15*" "

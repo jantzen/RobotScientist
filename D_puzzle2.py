@@ -1,6 +1,6 @@
 # D_puzzle2.py
 
-""" Ground truth: pressure and temperature together cause the color.
+""" Ground truth: humidity and temperature together cause the color.
 """
 
 from __future__ import print_function
@@ -9,7 +9,7 @@ import time
 
 sense = SenseHat()
 
-print("Temperature    Humidity       Pressure       MagneticField\n\n")
+print("Temperature" + 5*" " + "Humidity" + 5*" " + "Pressure" + 5*" " + " MagneticField\n\n")
 
 while True:
     # measure variables
@@ -19,15 +19,16 @@ while True:
     raw = sense.get_compass_raw()
     m_field = raw['x']**2 + raw['y']**2 + raw['z']**2
 
-    t = int(min([max([(temperature - 18.) * 255. / 19., 0]), 255]))
-    p = int(min([max([(pressure - 500.) * 255. / 2000., 0]), 255]))
+    t = int(min([max([(temperature - 22.) * 255. / 15., 0]), 255]))
+#    p = int(min([max([(pressure - 500.) * 255. / 2000., 0]), 255]))
+    h = int(min([max([humidity, 0]), 255]))
 
-    color = [t,0,p]
+    color = [t,0,h]
     
-    t_out = str(temperature) + 15*" "
-    h_out = str(humidity) + 15*" "
-    p_out = str(pressure) + 15*" "
-    m_out = str(m_field) + 15*" "
+    t_out = str(temperature) + 5*" "
+    h_out = str(humidity) + 5*" "
+    p_out = str(pressure) + 5*" "
+    m_out = str(m_field) + 5*" "
 
     print(t_out + h_out + p_out + m_out, end='\r')
  

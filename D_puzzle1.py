@@ -18,11 +18,11 @@ while True:
     raw = sense.get_compass_raw()
     m_field = raw['x']**2 + raw['y']**2 + raw['z']**2
     
-    t = int(min([max([(temperature - 18.) * 255. / 25., 0]), 255]))
+    t = int(min([max([(temperature - 22.) * 255. / 15., 0]), 255]))
     
     color = [t, 0, 255 - t]
     
-    t_out = str(temperature) + 15*" "
+    t_out = str(temperature) + 5*" "
     h_out = str(humidity) + 5*" "
     p_out = str(pressure) + 5*" "
     m_out = str(m_field) + 5*" "
