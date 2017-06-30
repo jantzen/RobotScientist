@@ -37,4 +37,4 @@ try:
         time.sleep(0.1)
 
 except KeyboardInterrupt:
-    sense.set_pixels(64 * [0,0,0])
+    sense.set_pixels(64 * [[0,0,0]])
