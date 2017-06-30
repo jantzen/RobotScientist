@@ -39,4 +39,5 @@ try:
         time.sleep(0.1)
 
 except KeyboardInterrupt:
+    print('\n')
     sense.set_pixels(64 * [[0,0,0]])
