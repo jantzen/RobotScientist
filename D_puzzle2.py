@@ -19,7 +19,7 @@ while True:
     raw = sense.get_compass_raw()
     m_field = raw['x']**2 + raw['y']**2 + raw['z']**2
 
-    t = int(min([max([(temperature - 22.) * 255. / 15., 0]), 255]))
+    t = int(min([max([(temperature - 25.) * 255. / 15., 0]), 255]))
 #    p = int(min([max([(pressure - 500.) * 255. / 2000., 0]), 255]))
     h = int(min([max([humidity, 0]), 255]))
 
