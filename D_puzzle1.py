@@ -10,7 +10,7 @@ sense = SenseHat()
 
 try:
 
-    print("Temperature" + 7*" " + "Humidity" + 7*" " + "Pressure" + 7*" " + " MagneticField\n\n")
+    print("Temperature" + 9*" " + "Humidity" + 9*" " + "Pressure" + 9*" " + " MagneticField\n\n")
 
     while True:
         # measure variables
@@ -36,5 +36,5 @@ try:
         
         time.sleep(0.1)
 
-except KeyBoardInterrupt:
+except KeyboardInterrupt:
     sense.set_pixels(64 * [0,0,0])
