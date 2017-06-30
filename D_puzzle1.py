@@ -20,7 +20,7 @@ while True:
     
     t = int(min([max([(temperature - 18.) * 255. / 25., 0]), 255]))
     
-    color = [t,0,0]
+    color = [t, 0, 255 - t]
     
     t_out = str(temperature) + 15*" "
     h_out = str(humidity) + 5*" "
