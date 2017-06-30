@@ -8,7 +8,7 @@ import time
 
 sense = SenseHat()
 
-print("Temperature" + 5*" " + "Humidity" + 5*" " + "Pressure" + 5*" " + " MagneticField\n\n")
+print("Temperature" + 7*" " + "Humidity" + 7*" " + "Pressure" + 7*" " + " MagneticField\n\n")
 
 while True:
     # measure variables
