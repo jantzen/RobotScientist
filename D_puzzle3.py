@@ -3,9 +3,9 @@
 """ Ground truth: pressure, temperature, and magnetic field together cause the color.
 """
 
+from __future__ import print_function
 from sense_hat import SenseHat
 import time
-from __future__ import print_function
 
 sense = SenseHat()
 

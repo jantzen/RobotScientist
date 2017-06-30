@@ -2,10 +2,9 @@
 
 """ Ground truth: temperature alone causes the color.
 """
-
+from __future__ import print_function
 from sense_hat import SenseHat
 import time
-from __future__ import print_function
 
 sense = SenseHat()
 
