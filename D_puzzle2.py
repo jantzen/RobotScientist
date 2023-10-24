@@ -2,15 +2,13 @@
 
 """ Ground truth: humidity and temperature together cause the color.
 """
-
-from __future__ import print_function
 from sense_hat import SenseHat
 import time
 
 sense = SenseHat()
 
 try:
-    print("Temperature" + 9*" " + "Humidity" + 9*" " + "Pressure" + 9*" " + " MagneticField\n\n")
+    print(" {:<15}  {:<15}  {:<15}  {:<15}\n\n".format("Temperature", "Humidity", "Pressure", "MagneticField"))
 
     while True:
         # measure variables
@@ -21,18 +19,12 @@ try:
         m_field = raw['x']**2 + raw['y']**2 + raw['z']**2
 
         t = int(min([max([(temperature - 27.) * 255. / 20., 0]), 255]))
-    #    p = int(min([max([(pressure - 500.) * 255. / 2000., 0]), 255]))
         h = int(min([humidity * 1.5, 255]))
 
         color = [t,0,h]
-        
-        t_out = str(temperature) + 5*" "
-        h_out = str(humidity) + 5*" "
-        p_out = str(pressure) + 5*" "
-        m_out = str(m_field) + 5*" "
+ 
+        print(" {:<15.4f}  {:<15.4f}  {:<15.4f}  {:<15.4f}".format(temperature, humidity, pressure, m_field), end="\r") 
 
-        print(t_out + h_out + p_out + m_out, end='\r')
-     
         sense.set_pixels(64 * [color])
 
         time.sleep(0.1)
