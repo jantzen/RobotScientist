@@ -20,7 +20,7 @@ try:
 
         t = int(min([max([(temperature - 27.) * 255. / 20., 0]), 255]))
         h = int(min([max([humidity, 0]), 255]))
-        m = int(min([max([(m_field - 70.) / 32., 0]), 255]))
+        m = int(min([max([(m_field - 70.) / 3., 0]), 255]))
 
         color = [t,m,h]
         
