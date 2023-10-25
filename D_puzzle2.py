@@ -16,7 +16,7 @@ try:
         humidity = sense.get_humidity()
         pressure = sense.get_pressure()
         raw = sense.get_compass_raw()
-        m_field = raw['x']**2 + raw['y']**2 + raw['z']**2
+        m_field = (raw['x']**2 + raw['y']**2 + raw['z']**2)**(0.5)
 
         t = int(min([max([(temperature - 27.) * 255. / 20., 0]), 255]))
         h = int(min([humidity * 1.5, 255]))
